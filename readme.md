@@ -15,8 +15,8 @@ the buttons and numpad.
 We now build from the ground 
 up.
 
-For questions, mail:
-jeffrey_wii@hotmail.com
+For questions, mail the owner
+of this codebase.
 
 ## Git Branches:
 - master
