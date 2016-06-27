@@ -1,13 +1,13 @@
 ##############################
-  Codebase for Raspberry Pi
+#Codebase for Raspberry Pi
 ##############################
 
-Team:
+## Team:
 ★ Jeffrey
 ☆ Roy
 ✯ Soed
 
-Description:
+## Description:
 For the Raspberry We needed an
 amount of code for controlling
 the buttons and numpad.
@@ -18,7 +18,7 @@ up.
 For questions, mail:
 jeffrey_wii@hotmail.com
 
-Git Branches:
+## Git Branches:
 - master
 - dev
 - soed
