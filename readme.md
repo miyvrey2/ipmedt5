@@ -3,9 +3,9 @@
 ##############################
 
 ## Team:
-```★ Jeffrey
+★ Jeffrey
 ☆ Roy
-✯ Soed```
+✯ Soed
 
 ## Description:
 For the Raspberry We needed an
