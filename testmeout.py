@@ -51,16 +51,18 @@ while True:
 		time.sleep(1)
 	
 		# Now for input
-		for y in range(1, 16):
-			time.sleep(0.1)
+		maxRange = 96
+		for y in range(1, maxRange):
+			time.sleep(0.05)
 	
 			# Answer handling
 			answerbit = button.numbuttons()
 			answer = answer + str(answerbit)
 			returna = answer
 	
-			if len(answer) > 0 and y == 15:
-				score = score + 10
+			if len(answer) > 0 and y == (maxRange - 1):
+				if sum.checkSum(float(answer)) == "1":
+					score = score + 10
 			
 			for z in range(1, 6):
 				if len(returna) < z:

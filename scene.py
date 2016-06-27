@@ -28,3 +28,7 @@ class scene:
 			time.sleep(0.5)
 		rta.codeBig("JYM03")
 		time.sleep(0.3)
+
+		rta.codeSmall("JYM01")
+		time.sleep(0.3)
+		rta.sendSmall("Gamer", scoreAmount)
