@@ -83,7 +83,7 @@ class button:
 			if self.array[x] > 2:
 				self.array[x] -= 1
 			if self.array[x] == 6:
-				print(x)
+				# print(x)
 				return x
 		return ""
 	

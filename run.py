@@ -2,13 +2,21 @@ import time
 from rta import rta
 from sum import sum
 from button import button
+from scene import scene
 
 
 sum = sum()
 button = button()
 rta = rta()
+scene = scene()
 
-for x in range(0, 15):
+score = 0
+
+while True:
+	if scene.pressStart(rta, button) == True:
+		break
+
+for x in range(0, 3):
 	
 	# Clear the board
 	rta.code("JYM01")
@@ -36,22 +44,30 @@ for x in range(0, 15):
 	rta.send(som, "")
 	time.sleep(0.03)
 
-	for y in range(1, 20):
+	for y in range(1, 16):
 		time.sleep(0.1)
 		answerbit = button.numbuttons()
 		answer = answer + str(answerbit)
 		returna = answer
+
+		if len(answer) > 0 and y == 15:
+			score = score + 10
 		
 		for z in range(1, 6):
 			if len(returna) <= 5:
 				returna = returna + " "
+		# Less time
+		#rta.code("JYM02")
+		time.sleep(0.1)
 
 		rta.send(som, returna)
-		time.sleep(0.03)
+		time.sleep(0.04)
 		
 		if button.buttonClickIn(11) == True:
 			clickIn = 1
 		if button.buttonClickOut(11) == True and (clickIn == 1):
+			score = score + 0
 			break
 	button.numbuttonsReset()
-	
+print(score)
+scene.score(rta, str(score))

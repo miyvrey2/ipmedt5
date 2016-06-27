@@ -11,7 +11,7 @@ class rta:
 		self.ser.write(value2)
 
 	def code(self, code):
-		self.ser.write("JYM01")
+		self.ser.write(code)
 
 	def autoSend(self):
 		ser = serial.Serial('/dev/ttyACM0', 9600)
