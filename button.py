@@ -5,6 +5,7 @@ class button:
 
 	# Initiate variables
 	redClickIn = 0
+	greenClickIn = 0
 
 	# Pre-check for when clicked
 	array = {}
@@ -53,6 +54,16 @@ class button:
 		if button.buttonClickOut(self, GPIOPIN) == True and (self.redClickIn == 1):
 			print("Clicked Red Button")
 			self.redClickIn = 0
+			return True
+		return False
+	
+	def greenButton(self, GPIOPIN):
+		# If Red has been clicked, continue
+		if self.buttonClickIn(GPIOPIN) == True:
+			self.greenClickIn = 1
+		if button.buttonClickOut(self, GPIOPIN) == True and (self.greenClickIn == 1):
+			print("Clicked Green Button")
+			self.greenClickIn = 0
 			return True
 		return False
 

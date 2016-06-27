@@ -29,14 +29,12 @@ while True:
 	
 	# Define rest, so the pin can react. Then draw a black screen.
 	time.sleep(1)
-	for x in range(0, 2):
+	for x in range(0, 16):
 		
 		# Define the variables
 		clickIn = 0
 		answer = ""
 		answerbit = ""
-		
-		print(x)
 	
 		# create new Som
 		som = sum.createSum()
@@ -71,20 +69,37 @@ while True:
 	
 			rta.sendBig(sum.scoreCalc(score), "     ", str(som), returna)
 			time.sleep(0.04)
+
+			# If Green has been clicked, continue
+			if button.greenButton(19) == True and answer != "":
+				if sum.checkSum(float(answer)) == "1":
+					score = score + 10
+				break
 	
 			# If Red has been clicked, continue
 			if button.redButton(11) == True:
-				score = score + 0
-				break
+				if len(answer) > 0:
+					answer = answer[:-1]
+					returna = answer + "     "
+					rta.sendBig(sum.scoreCalc(score), "     ", str(som), returna)
+					time.sleep(0.04)
+				else:
+					score = score + 0
+					break
 	scene.score(rta, str(score))
 	while True:
 		output = rta.get2()
 		rta.sendBig("Naam:", naam + str(output) + "     ", "     ", "     ")
 		
 		# If green has been clicked, continue
-		if button.redButton(19) == True:
+		if button.greenButton(19) == True:
 			if len(naam) < 4:
 				naam = naam + output
 			else:
+				naam = naam + output
 				break
+
+		# if red button, remove char
+		if button.redButton(11) == True:
+			naam = naam[:-1]
 	scene.smallScore(rta,naam, str(score))

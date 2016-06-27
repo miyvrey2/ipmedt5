@@ -11,9 +11,9 @@ class scene:
 		time.sleep(0.03)
 
 	def pressStart(self, rta, button):
-		if button.buttonClickIn(11) == True:
+		if button.buttonClickIn(19) == True:
 			self.clickIn = 1
-		if button.buttonClickOut(11) == True and (self.clickIn == 1):
+		if button.buttonClickOut(19) == True and (self.clickIn == 1):
 			self.clickIn = 0
 			return True
 
