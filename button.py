@@ -3,6 +3,9 @@ import time
 
 class button:
 
+	# Initiate variables
+	redClickIn = 0
+
 	# Pre-check for when clicked
 	array = {}
 	array[0] = 0
@@ -43,6 +46,15 @@ class button:
 				return False	
 			else:
 				return True
+	def redButton(self, GPIOPIN):
+		# If Red has been clicked, continue
+		if self.buttonClickIn(GPIOPIN) == True:
+			self.redClickIn = 1
+		if button.buttonClickOut(self, GPIOPIN) == True and (self.redClickIn == 1):
+			print("Clicked Red Button")
+			self.redClickIn = 0
+			return True
+		return False
 
 	def numbuttons(self):
 		

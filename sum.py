@@ -27,3 +27,21 @@ class sum:
 
 	def retrieveAnswer(self):
 		return self.intAnswer;
+	
+	def scoreCalc(self, score):
+		score = str(score)
+		if len(score) < 2:
+			score = "0000" + score
+		
+		elif len(score) < 3 and len(score) >= 2:
+			score = "000" + score
+
+		elif len(score) < 4 and len(score) >= 3:
+			score = "00" + score
+
+		elif len(score) < 5 and len(score) >= 4:
+			score = "0" + score
+		else:
+			score = score
+		
+		return score

@@ -19,7 +19,8 @@ while True:
 for x in range(0, 3):
 	
 	# Clear the board
-	rta.code("JYM01")
+	rta.codeBig("JYM01")
+	time.sleep(1)
 	
 	clickIn = 0
 	answer = ""
@@ -40,8 +41,11 @@ for x in range(0, 3):
 	current = wsinye + str(x)
 
 	# Now print
-	#rta.send("som" + current, som)
-	rta.send(som, "")
+	#rta.sendBig("som" + current, som)
+	rta.codeBig("JYM01")
+	time.sleep(1)
+
+	rta.sendBig(str(score),som, "     ", "     ")
 	time.sleep(0.03)
 
 	for y in range(1, 16):
@@ -57,10 +61,10 @@ for x in range(0, 3):
 			if len(returna) <= 5:
 				returna = returna + " "
 		# Less time
-		#rta.code("JYM02")
+		#rta.codeBig("JYM02")
 		time.sleep(0.1)
 
-		rta.send(som, returna)
+		rta.sendBig(som, returna, "     ","     ")
 		time.sleep(0.04)
 		
 		if button.buttonClickIn(11) == True:
