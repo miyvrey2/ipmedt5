@@ -14,6 +14,7 @@ while True:
 	
 	# Set variables
 	score = 0
+	naam = ""
 	
 	# Define rest, so the pin can react. Then draw a black screen.
 	time.sleep(1)
@@ -28,7 +29,7 @@ while True:
 	
 	# Define rest, so the pin can react. Then draw a black screen.
 	time.sleep(1)
-	for x in range(0, 8):
+	for x in range(0, 2):
 		
 		# Define the variables
 		clickIn = 0
@@ -76,3 +77,14 @@ while True:
 				score = score + 0
 				break
 	scene.score(rta, str(score))
+	while True:
+		output = rta.get2()
+		rta.sendBig("Naam:", naam + str(output) + "     ", "     ", "     ")
+		
+		# If green has been clicked, continue
+		if button.redButton(19) == True:
+			if len(naam) < 4:
+				naam = naam + output
+			else:
+				break
+	scene.smallScore(rta,naam, str(score))

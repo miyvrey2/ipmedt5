@@ -34,15 +34,19 @@ class rta:
 		charArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"," ", " "]
 		
 		outcome = self.ser2.readline();
-		
+		print(outcome)
 		if outcome != "0":
 			outcome = float(outcome)
 		else:
 			outcome = 1
-		
-		outcome = int(outcome + 1)
+		outcome = int(outcome)
 		inputCharKey = outcome / 37.8889
+		inputCharKey = outcome / 39.34615
 		inputCharKey = round(inputCharKey)
-		inputCharKey = int(inputCharKey) - 1
-		inputCharKey = charArray[inputCharKey]
+		inputCharKey = int(inputCharKey)
+			
+		if(inputCharKey <= 28):
+			inputCharKey = charArray[inputCharKey]
+		else:
+			inputCharKey = "_"
 		return inputCharKey

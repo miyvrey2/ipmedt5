@@ -83,8 +83,7 @@ while True:
 		
 		# If green has been clicked, continue
 		if button.redButton(19) == True:
-			if len(naam) < 4:
+			if len(naam) < 5:
 				naam = naam + output
 			else:
 				break
-	scene.smallScore(rta,naam, str(score))
