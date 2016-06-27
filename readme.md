@@ -12,15 +12,15 @@ For the Raspberry We needed an
 amount of code for controlling
 the buttons and numpad.
 
-We now build this code up of
-the ground.
+We now build from the ground 
+up.
 
 For questions, mail:
 jeffrey_wii@hotmail.com
 
 Git Branches:
-master
-dev
-soed
-roy
-jeffrey
+- master
+- dev
+- soed
+- roy
+- jeffrey
